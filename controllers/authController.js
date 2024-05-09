@@ -33,7 +33,7 @@ exports.login = async (req, res) => {
     });
     // console.log("🚀 ~ exports.login= ~ token:", token)
 
-    return res.cookie('access_token', token, { httpOnly: true, }).status(200).json({ id: user._id, name: user.name, email: user.email, message: 'login success' });
+    return res.cookie('access_token', token, { secure: true, }).status(200).json({ id: user._id, name: user.name, email: user.email, message: 'login success' });
 
   } catch (error) {
     console.error(error);
